@@ -13,6 +13,7 @@ if (isset($_POST["firstName"])) {
 		alert(e);
 	});
 </script>-->
+<a href="?firstName=Phil">Click to say hello to Phil</a>
 <form>
 	<label>
 		<span>First Name (GET)</span>

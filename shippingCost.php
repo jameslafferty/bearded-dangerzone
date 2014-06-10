@@ -19,7 +19,6 @@ if (isset($_GET["weight"]) &&
 	} else {
 		$errors[] = "Please select a valid shipping method.";
 	}
-	
 	if (isset($weight) &&
 		isset($myShippingRate)) {
 		$shippingCost = $weight * $myShippingRate;

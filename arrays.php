@@ -33,9 +33,9 @@ foreach ($animals as $species => $members) {
 			echo "<li>$aMember</li>";
 		}
 		echo "</ul></li>";
-		continue;
+	} else {
+		echo "$members</li>";
 	}
-	echo "$members</li>";
 }
 echo "</ul>";
 $animals["cats"][0] = "Tigger";
