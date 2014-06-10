@@ -9,7 +9,7 @@ To install mysql:
 
 ``` sudo port install mysql_select ```
 
-``` sudo port select mysql55 mysql ```
+``` sudo port select mysql mysql55 ```
 
 ``` sudo port load mysql55 ```
 
