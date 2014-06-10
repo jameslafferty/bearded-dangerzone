@@ -92,6 +92,14 @@ function deleteResponse ($id, $pdo) {
 	));
 }
 
+function readResponse ($id, $pdo) {
+	$sql = "SELECT id, firstName, lastName, phone, attending FROM responses WHERE id=:id;";
+	$stmt = $pdo->prepare($sql);
+	$stmt->execute(array(
+		"id" => $id
+	));
+	return $stmt->fetchObject();
+}
 
 
 
