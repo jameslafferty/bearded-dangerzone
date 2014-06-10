@@ -80,6 +80,14 @@ function displayResponses ($pdo) {
 	}
 }
 
+function deleteResponse ($id, $pdo) {
+	$sql = "DELETE FROM responses WHERE id=:id LIMIT 1;";
+	$stmt = $pdo->prepare($sql);
+	$stmt->execute(array(
+		"id" => $id
+	));
+}
+
 
 
 
