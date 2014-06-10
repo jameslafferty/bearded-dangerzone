@@ -55,3 +55,29 @@ function recordResponse ($response, $pdo) {
 		return "<ul><li>" . implode("</li><li>", $errors) . "</li></ul>";
 	}
 }
+
+function displayResponses ($pdo) {
+	$sql = "SELECT 
+			id, firstName, lastName, phone, attending 
+		FROM responses;";
+	$stmt = $pdo->prepare($sql);
+	$stmt->execute();
+	while ($row = $stmt->fetchObject()) {
+		$attending = $row->attending ? "yes" : "no";
+		echo "<tr>
+			<td>$row->firstName</td>
+			<td>$row->lastName</td>
+			<td>$row->phone</td>
+			<td>$attending</td>
+		</tr>";
+
+	}
+}
+
+
+
+
+
+
+
+
