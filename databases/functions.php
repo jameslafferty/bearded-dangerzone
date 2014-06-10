@@ -76,6 +76,10 @@ function displayResponses ($pdo) {
 						<span>Delete</span>
 					</button>
 				</form>
+			</td>
+			<td>
+				<a href='update.php?id=$row->id'>Update</a>
+			</td>
 		</tr>";
 	}
 }
