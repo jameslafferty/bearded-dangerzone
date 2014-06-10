@@ -21,3 +21,6 @@ To install mysql:
 
 SQL for creating the table
 ``` CREATE TABLE responses (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, firstName VARCHAR(255), lastName VARCHAR(255), phone VARCHAR(255), attending BOOLEAN ); ```
+
+
+

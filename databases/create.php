@@ -1,5 +1,6 @@
 <?php
-session_start();
+session_start(); // There is a session_destroy and 
+				// you can empty the session.
 if (isset($_SESSION["isSubmitted"])) {
 	header("Location: read.php");
 }
