@@ -32,7 +32,24 @@ function recordResponse ($response, $pdo) {
 		isset($lastName) && 
 		isset($phone) &&
 		isset($attending)) {
-		//Database code to go here.
+		$sql = "INSERT INTO responses (
+				firstName,
+				lastName,
+				phone,
+				attending
+			) VALUES (
+				:firstName,
+				:lastName,
+				:phone,
+				:attending
+			);";
+		$stmt = $pdo->prepare($sql);
+		$stmt->execute(array(
+			"firstName" =>  $firstName,
+			"lastName" => $lastName,
+			"phone" => $phone,
+			"attending" => "yes" === $attending ? true : false
+		));
 		return "<p>Thank you for your rsvp.</p>";
 	} else {
 		return "<ul><li>" . implode("</li><li>", $errors) . "</li></ul>";
