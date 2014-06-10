@@ -1,15 +1,15 @@
 <?php
 require "functions.php";
-if (isset($_GET["id"])) {
-	$record = readResponse($_GET["id"], connect());
-} else {
-	header("Location: read.php");
-}
 if (isset($_POST["firstName"]) &&
 	isset($_POST["lastName"]) &&
 	isset($_POST["phone"]) &&
 	isset($_POST["attending"])) {
-	//echo recordResponse($_POST, connect());
+	echo updateResponse($_POST, connect());
+}
+if (isset($_GET["id"])) {
+	$record = readResponse($_GET["id"], connect());
+} else {
+	header("Location: read.php");
 }
 ?>
 <form method="post">

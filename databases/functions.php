@@ -101,6 +101,51 @@ function readResponse ($id, $pdo) {
 	return $stmt->fetchObject();
 }
 
+function updateResponse ($response, $pdo) {
+	if (!empty($response["firstName"])) {
+		$firstName = $response["firstName"];
+	} else {
+		$errors[] = "A first name is required.";
+	}
+	if (!empty($response["lastName"])) {
+		$lastName = $response["lastName"];
+	} else {
+		$errors[] = "A last name is required.";
+	}
+	if (!empty($response["phone"])) {
+		$phone = $response["phone"];
+	} else {
+		$errors[] = "A phone number is required.";
+	}
+	if (!empty($response["attending"])) {
+		$attending = $response["attending"];
+	} else {
+		$errors[] = "Will you be attending?";
+	}
+	if (isset($firstName) &&
+		isset($lastName) && 
+		isset($phone) &&
+		isset($attending)) {
+		$sql = "UPDATE responses SET
+				firstName=:firstName,
+				lastName=:lastName,
+				phone=:phone,
+				attending=:attending
+			WHERE id=:id";
+		$stmt = $pdo->prepare($sql);
+		$stmt->execute(array(
+			"id" => $response["id"],
+			"firstName" =>  $firstName,
+			"lastName" => $lastName,
+			"phone" => $phone,
+			"attending" => "yes" === $attending ? true : false
+		));
+		return "<p>Thank you for your rsvp.</p>";
+	} else {
+		return "<ul><li>" . implode("</li><li>", $errors) . "</li></ul>";
+	}
+}
+
 
 
 
