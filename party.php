@@ -70,7 +70,7 @@ if (isset($_POST["firstName"]) &&
 		<span>Yes</span>
 	</label>
 	<label>
-		<input name="attending" type="radio" value="no" />
+		<input checked name="attending" type="radio" value="no" />
 		<span>No</span>
 	</label>
 	<button type="submit">
