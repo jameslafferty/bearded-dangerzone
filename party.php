@@ -1,14 +1,4 @@
 <?php
-//$handle = fopen("addresses.csv", "w");
-//fputcsv($handle, array(
-//	"Barak",
-//	"Obama",
-//	"1600 Pennsylvania Avenue",
-//	"Washington",
-//	"DC",
-//	"20500"
-//));
-//fclose($handle);
 require "partyFunctions.php";
 if (isset($_POST["firstName"]) &&
 	isset($_POST["lastName"]) &&
@@ -17,6 +7,11 @@ if (isset($_POST["firstName"]) &&
 	echo recordResponse($_POST);
 }
 ?>
+<table>
+<?php
+	displayResponses();
+?>
+</table>
 <form method="post">
 	<label>
 		<span>First Name</span>

@@ -37,3 +37,18 @@ function recordResponse ($response) {
 		return "<ul><li>" . implode("</li><li>", $errors) . "</li></ul>";
 	}
 }
+
+function displayResponses () {
+	$handle = fopen("rsvp.csv", "r");
+	while ($response = fgetcsv($handle)) {
+		echo "<tr><td>" . implode("</td><td>", $response) . "</td></tr>";
+	}
+	fclose($handle);
+}
+
+
+
+
+
+
+
