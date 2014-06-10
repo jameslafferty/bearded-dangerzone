@@ -1,9 +1,14 @@
 <?php
+session_start();
+if (isset($_SESSION["isSubmitted"])) {
+	header("Location: read.php");
+}
 if (isset($_POST["firstName"]) &&
 	isset($_POST["lastName"]) &&
 	isset($_POST["phone"]) &&
 	isset($_POST["attending"])) {
 	require "functions.php";
+	$_SESSION["isSubmitted"] = true;
 	echo recordResponse($_POST, connect());
 }
 ?>
