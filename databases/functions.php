@@ -69,8 +69,14 @@ function displayResponses ($pdo) {
 			<td>$row->lastName</td>
 			<td>$row->phone</td>
 			<td>$attending</td>
+			<td>
+				<form action='delete.php' method='post'>
+					<input name='id' type='hidden' value='$row->id' />
+					<button type='submit'>
+						<span>Delete</span>
+					</button>
+				</form>
 		</tr>";
-
 	}
 }
 
