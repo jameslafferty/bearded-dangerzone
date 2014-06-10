@@ -18,3 +18,6 @@ To install mysql:
 ``` sudo /opt/local/lib/mysql55/bin/mysql_install_db --user=mysql ```
 
 ``` sudo /opt/local/lib/mysql55/bin/mysql_secure_installation ```
+
+SQL for creating the table
+``` CREATE TABLE responses (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, firstName VARCHAR(255), lastName VARCHAR(255), phone VARCHAR(255), attending BOOLEAN ); ```
